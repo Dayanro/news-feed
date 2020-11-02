@@ -1,6 +1,7 @@
 #!/usr/bin/env node
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import app from "../app";
-import logger from "../log";
 import http from "http";
 
 const PORT = process.env.PORT || 3000
