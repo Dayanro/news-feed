@@ -21,7 +21,6 @@ const user = [
 
 const createUsers = async () => {
   try {
-    console.log('Mongo', mongoConnection);
     const db = await mongoConnection;
     UserModel.collection.drop();
     await UserModel.create(user);

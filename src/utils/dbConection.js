@@ -10,7 +10,6 @@ const {
 
 const databaseUrl = `${PROTOCOL}//${DB_USERNAME}:${DB_PASSWORD}@${DB_HOSTNAME}/${DB_NAME}`;
 
-console.log('URL', databaseUrl)
 export const mongoConnection = mongoose.connect(databaseUrl, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
