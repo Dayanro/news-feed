@@ -11,7 +11,7 @@
     "prod": "NODE_ENV=production npm-run-all build server",
     "transpile": "babel ./src --out-dir dist-src",
     "clean": "rimraf dist-src",
-    "test": "jest --testEnvironment=node --verbose --forceExit --watchAll --maxWorkers=1"
+    "test": "jest --testEnvironment=node --verbose --forceExit --maxWorkers=1"
   },
   "repository": {
     "type": "git",
