@@ -10,4 +10,6 @@ loaders.mongodb();
 loaders.router(app);
 loaders.middlewares(app);
 
+loaders.mongodb();
+
 export default app;
