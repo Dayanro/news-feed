@@ -1,7 +1,7 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-import httpMock, { MockResponse, MockRequest } from "node-mocks-http";
+import httpMock from "node-mocks-http";
 import {
   fakeAuthHeader,
   fakeUserExtract,
@@ -28,7 +28,7 @@ describe("Middleware Login Auth", () => {
 
     expect(next).toHaveBeenCalled();
   })
-  it('shoould catch an error is something is wrong', () => { 
+  it('should catch an error is something is wrong', () => { 
     const spyLoginAuth = jest
       .spyOn(authService, "login")
       .mockImplementationOnce(() => {

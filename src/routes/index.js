@@ -1,1 +1,1 @@
-
+export { newsRoute } from "./news";
