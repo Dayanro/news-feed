@@ -3,7 +3,7 @@ import "regenerator-runtime/runtime";
 
 import * as authService from "../../../src/services/auth";
 import * as userRepository from "../../../src/repositories/user";
-import { fakeUserModel, fakeUserExtract, fakeUsername, fakePassword, fakeUser } from '../../mocks/authentications';
+import { fakeUserModel, fakeUserExtract, fakeUsername, fakePassword} from '../../mocks/authentications';
 import {AuthenticationError,BadRequestError } from "../../../src/errors"
 
 describe("Login", () => {
