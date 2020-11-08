@@ -9,7 +9,7 @@ import "regenerator-runtime/runtime";
 const user = [
   {
     username: "Admin",
-    password: "©",
+    password: "Admin123",
     role: "ADMIN",
   },
   {
