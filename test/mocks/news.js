@@ -8,6 +8,8 @@ export const fakeImage = "fakeImage";
 export const fakeQuotations = "fakeQuotations";
 export const fakeNewsId = "12345fdg780hj097";
 export const fakedate = new Date();
+export const fakePage = 1;
+export const fakeLimit = 5;
 
 export const fakeNews = {
   title: fakeTitle,

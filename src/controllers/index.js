@@ -1,1 +1,1 @@
-export { createNews } from "./news";
+export { createNews, getNews } from "./news";

@@ -1,2 +1,2 @@
 export { login } from "./auth";
-export {addNews} from "./news";
+export { addNews, retrieveNews } from "./news";
