@@ -13,7 +13,7 @@ The news feed API allows authenticated users to retrieve news or to create news 
 - [Techologies](#Techologies)
 - [Author](#Author)
 - [License](#License)
-- [Links](#links)
+- [Link](#link)
 
 
 ## Prerequisites

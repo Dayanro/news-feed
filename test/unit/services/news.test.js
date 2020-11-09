@@ -46,7 +46,7 @@ describe("Create news", () => {
 
       const result = await newsService.retrieveNews("1", "10");
 
-      expect(spyRepository).toHaveBeenCalledWith(2, 0);
+      expect(spyRepository).toHaveBeenCalledWith(10, 0);
       expect(result).toStrictEqual([]);
     });
 
