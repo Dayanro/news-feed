@@ -2,7 +2,7 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 
 import httpMock from "node-mocks-http";
-import { fakeNewsModel } from "../../mocks/news";
+import { fakeNewsModel, fakePage, fakeLimit } from "../../mocks/news";
 import { fakeUserId } from "../../mocks/authentications";
 import * as newsService from "../../../src/services/news";
 import * as newsController from "../../../src/controllers/news";
@@ -54,5 +54,50 @@ describe("News controller", () => {
         expect(next).toHaveBeenCalledWith(error);
       }
     });
+  });
+
+  describe("getNews", () => {
+    beforeEach(() => {
+      req.query = { page: fakePage, limit: fakeLimit };
+    });
+    it("should call retrieveNews with page and limit", async () => {
+      const spyGetNews = jest
+        .spyOn(newsService, "retrieveNews")
+        .mockResolvedValueOnce([]);
+
+      await newsController.getNews(req, res, next);
+
+      expect(spyGetNews).toHaveBeenCalledWith(fakePage, fakeLimit);
+    });
+
+    it("should return status 200 if the news are retrieved", async () => {
+      jest.spyOn(newsService, "retrieveNews").mockResolvedValueOnce([]);
+
+      await newsController.getNews(req, res, next);
+
+      expect(res.statusCode).toBe(200);
+    });
+
+    it("should send the response of retrieveNews", async () => {
+      jest.spyOn(newsService, "retrieveNews").mockResolvedValueOnce([]);
+
+      await newsController.getNews(req, res, next);
+
+      expect(res._getJSONData()).toStrictEqual([]);
+    });
+
+        it("should pass error to the next middleware", async () => {
+          jest
+            .spyOn(newsService, "retrieveNews")
+            .mockRejectedValueOnce(new Error());
+
+          try {
+            await newsController.getNews(req, res, next);
+          } catch (error) {
+            expect(error).toBeInstanceOf(Error);
+            expect(next).toHaveBeenCalledWith(error);
+          }
+        });
+    
   });
 });

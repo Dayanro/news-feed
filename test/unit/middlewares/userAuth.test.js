@@ -41,7 +41,7 @@ describe("Middleware Login Auth", () => {
       expect(error).toBeInstanceOf(Error)
     }
   })
-  it("if authoritation its provided should call Login and assign the info to req.user ", async () => {
+  it("if authorization its provided it should call Login and assign the info to req.user ", async () => {
     const spyLoginAuth = jest
       .spyOn(authService, "login")
       .mockResolvedValueOnce(fakeUserExtract);

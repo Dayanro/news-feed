@@ -1,4 +1,3 @@
-
 // Patterns
 export const PASSWORD_PATTERN = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
 
@@ -9,10 +8,14 @@ export const SALT = 10;
 export const PREFIX_API_URL = "/api";
 
 // Roles
-export const ROLE_ADMIN = "ADMIN"
-export const ROLE_USER ="USER"
+export const ROLE_ADMIN = "ADMIN";
+export const ROLE_USER = "USER";
 
 //Error Messages
-export const INVALID_CREDENTIALS = "Invalid Credentials"
+export const INVALID_CREDENTIALS = "Invalid Credentials";
 export const BAD_REQUEST = "Invalid request missing data";
-export const UNAUTHORIZED= "You do not have the rigth permissions"
+export const UNAUTHORIZED = "You do not have the rigth permissions";
+export const MISSING_PAGINATION = "Missing pagination parameters";
+
+//Pagination
+export const LIMIT_ITEMS =10;
