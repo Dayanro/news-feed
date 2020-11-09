@@ -5,6 +5,7 @@ The news feed API allows authenticated users to retrieve news or to create news 
 ## Table of content
 
 - [Prerequisites](#Prerequisites)
+- [How to install](#How-to-install)
 - [How to run](#How-to-run)
 - [Usage](#Usage)
     - [1. Create News Item](#1.-Create-News-Item)
@@ -13,7 +14,7 @@ The news feed API allows authenticated users to retrieve news or to create news 
 - [Techologies](#Techologies)
 - [Author](#Author)
 - [License](#License)
-- [Link](#link)
+- [Project board](#Project-board)
 
 
 ## Prerequisites
@@ -24,7 +25,7 @@ The news feed API allows authenticated users to retrieve news or to create news 
 - Create a .env file in the project root directory:
 
 ```bash
- touch .env
+ $ touch .env
 ```
 
 - Add MongoDB and Express variables:
@@ -37,31 +38,44 @@ DB_HOSTNAME=your_mongo_cluster
 DB_NAME=your_db_name
 DB_REMOTE=your_mongo_connection_string
 ```
+_You can consult the .env.template file to use it as an example of what you need, the PORT is not strictly necessary._
 
-- A seed file is provided in order to create tests users for using the API which can be found on
+## How to install
 
-- transpile the src code
-
+Clone this repository to your local machine
 ```
-npm run transpile
+$ git clone https://github.com/Dayanro/news-feed.git
 ```
 
-- run seed file
+Before you open the project, you have to navigate into the cloned folder because that’s where git is initialized:
+```
+$ cd news-feed
+```
 
+Run the following commands in your terminal:
 ```
-node src/bin/seed.js
+$ npm i
 ```
+_This will install all the required libraries and dependencies._
 
 ## How to run
+For dev (development) mode, you should run the following command on the project root directory:
+```
+$ npm run dev
+```
+
+A seed file is provided in order to create tests users for using the API, in case that the provided db is not used. before running the seed file, please ensure that you already have a connection to the db.
+
+the seed file can be found on:
 
 ```
-npm i
+$ src/bin/seed.js
 ```
 
-This will install all the required libraries and dependencies
+to run seed file
 
 ```
-npm run dev
+$ node src/bin/seed.js
 ```
 
 ## Usage
@@ -130,7 +144,7 @@ quotation=[string]
 - **Sample Call:**
 
 ```
-curl --location --request POST 'http://localhost:3000/api/news' \
+ $ curl --location --request POST 'http://localhost:3000/api/news' \
 --header 'Authorization: Basic QWRtaW46ERWRtaW4xFjM=' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -222,15 +236,15 @@ limit=[integer]
 - **Sample Call:**
 
 ```
-curl --location --request GET 'http://localhost:3000/api/news?page=1&limit=10' \
+$ curl --location --request GET 'http://localhost:3000/api/news?page=1&limit=10' \
 --header 'Authorization: Basic QWRtaW46QWRtaW4xMjM='
 }'
 ```
 
 ## How to run tests
-
+On the project root directory you can run the test directly from the command line the following: 
 ```
-npm run tests
+ $ npm run tests
 ```
 
 ## Techologies
@@ -257,6 +271,6 @@ npm run tests
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Link
+## Project board
 
 [Project board - News Content Feed](https://github.com/users/Dayanro/projects/2/)
