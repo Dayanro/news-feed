@@ -75,7 +75,7 @@ $ src/bin/seed.js
 to run seed file
 
 ```
-$ node src/bin/seed.js
+$ node dist-src/bin/seed.js
 ```
 
 ## Usage
